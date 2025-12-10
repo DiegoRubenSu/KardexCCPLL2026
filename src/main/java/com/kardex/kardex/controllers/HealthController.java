@@ -1,4 +1,4 @@
-package com.kardex.kardex.controllers;
+package com.kardexccpll.kardex.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,7 +8,7 @@ public class HealthController {
 
     @GetMapping("/")
     public String home() {
-        return "Kardex CCPLL está funcionando correctamente!";
+        return "Kardex CCPLL - Sistema de Inventarios";
     }
 
     @GetMapping("/health")
@@ -16,8 +16,8 @@ public class HealthController {
         return "OK";
     }
 
-    @GetMapping("/status")
-    public String status() {
-        return "{\"status\":\"UP\",\"service\":\"kardex\"}";
+    @GetMapping("/ping")
+    public String ping() {
+        return "pong";
     }
 }

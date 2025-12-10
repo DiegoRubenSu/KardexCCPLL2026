@@ -2,11 +2,22 @@ server:
   port: ${PORT:8080}
 
 spring:
+  main:
+    web-application-type: servlet
+
+  # Desactivar Spring Security COMPLETAMENTE
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+      - org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+      - org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration
+
+  # Usar H2 temporal (sin MySQL)
   datasource:
-    url: ${MYSQL_URL}?useSSL=false&allowPublicKeyRetrieval=true
-    username: ${MYSQLUSER}
-    password: ${MYSQLPASSWORD}
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
 
   jpa:
     hibernate:
@@ -15,8 +26,7 @@ spring:
 
   thymeleaf:
     cache: false
-
-  # Desactivar security temporalmente
-  autoconfigure:
-    exclude:
-      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
