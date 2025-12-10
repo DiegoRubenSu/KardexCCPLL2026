@@ -6,3 +6,5 @@ target/
 .mvn/
 mvnw
 mvnw.cmd
+Dockerfile.old
+README.md

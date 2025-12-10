@@ -1,6 +1,13 @@
 [build]
 builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
 
 [deploy]
-healthcheckPath = "/actuator/health"
+# NO usar healthcheck por ahora
+healthcheckPath = "/"
+healthcheckTimeout = 60
 restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+[deploy.healthCheck]
+enabled = false  # DESACTIVAR healthcheck temporalmente
