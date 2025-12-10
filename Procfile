@@ -1,1 +1,1 @@
-web: java -jar target/*.war
+web: java -Dserver.port=$PORT -jar target/kardex-1.0.0.jar
