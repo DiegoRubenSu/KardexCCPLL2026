@@ -47,13 +47,13 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <!-- SPRING SECURITY (NUEVO) -->
+        <!-- SPRING SECURITY -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <!-- ACTUATOR para monitoreo (NUEVO) -->
+        <!-- ACTUATOR para monitoreo -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -85,7 +85,7 @@
             <version>3.13.0</version>
         </dependency>
 
-        <!-- Testing (NUEVAS DEPENDENCIAS) -->
+        <!-- Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -107,14 +107,19 @@
             <version>6.1.1</version>
             <scope>compile</scope>
         </dependency>
-
+        <!-- NOTA: JUnit Jupiter ya viene incluido en spring-boot-starter-test,
+             pero si necesitas versión específica, usa solo UNA de estas dos: -->
+        <!-- OPCIÓN A: Con versión específica (comenta la otra) -->
+        <!--
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.9.2</version>
             <scope>test</scope>
         </dependency>
-
+        -->
+        <!-- OPCIÓN B: Sin versión (usa la de Spring Boot) -->
+        <!-- Ya está arriba sin versión -->
 
     </dependencies>
 
@@ -129,6 +134,7 @@
             </plugin>
         </plugins>
     </build>
+
     <profiles>
         <profile>
             <id>production</id>
