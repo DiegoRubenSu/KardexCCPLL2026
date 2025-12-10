@@ -1,4 +1,4 @@
-FROM openjdk:11-jdk-slim
+FROM eclipse-temurin:11-jdk-alpine
 WORKDIR /app
 COPY . .
 RUN chmod +x mvnw 2>/dev/null || true
