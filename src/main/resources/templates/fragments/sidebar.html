@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<!-- Este es el fragmento que se reutiliza en todas las páginas -->
+<div th:fragment="sidebar">
+    <div class="sideBar">
+        <h2>📦 SISTEMA INVENTARIO</h2>
+        <ul>
+            <li><a th:href="@{/menu}"><ion-icon name="home-outline"></ion-icon> Inicio</a></li>
+            <li><a th:href="@{/articulos}"><ion-icon name="list-outline"></ion-icon> Mostrar Artículos</a></li>
+            <li><a th:href="@{/articulos/registrarArticulo}"><ion-icon name="add-circle-outline"></ion-icon> Registrar Artículo</a></li>
+            <li><a th:href="@{/articulos/gestionar}"><ion-icon name="create-outline"></ion-icon> Editar/Eliminar Artículo</a></li>
+            <li><a th:href="@{/movimientos}"><ion-icon name="swap-vertical-outline"></ion-icon> Movimientos</a></li>
+            <li><a th:href="@{/movimientos/historial}"><ion-icon name="time-outline"></ion-icon> Historial</a></li>
+            <li><a th:href="@{/reportes}"><ion-icon name="document-text-outline"></ion-icon> Reportes</a></li>
+            <li><a th:href="@{/api-docs}"><ion-icon name="code-slash-outline"></ion-icon> API Docs</a></li>
+            <li><a th:href="@{/logout}"><ion-icon name="log-out-outline"></ion-icon> Cerrar Sesión</a></li>
+        </ul>
+
+        <!-- Información de sesión -->
+        <div style="padding: 15px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px;">
+            <p style="color: rgba(255,255,255,0.8); font-size: 14px; margin-bottom: 5px;">
+                <ion-icon name="person-outline"></ion-icon> Usuario: Logística
+            </p>
+            <p style="color: rgba(255,255,255,0.8); font-size: 12px;">
+                <ion-icon name="calendar-outline"></ion-icon>
+                <span th:text="${#temporals.format(#temporals.createNow(), 'dd/MM/yyyy')}"></span>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

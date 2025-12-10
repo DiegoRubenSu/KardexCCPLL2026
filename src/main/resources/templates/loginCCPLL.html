@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema de Inventarios CCPLL</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <style>
+        body.login-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #722f37 0%, #5a2430 100%);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body class="login-page">
+<div class="login-container">
+    <div class="loginCCPLL">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <img th:src="@{/images/LOGOCCPLL2025.png}"
+                 alt="Logo CCPLL 2025"
+                 style="width: 120px; height: auto; margin-bottom: 20px; border-radius: 8px;">
+            <h2 style="color: #722f37; margin-top: 15px;">Sistema de Inventarios</h2>
+            <p style="color: #6c757d; margin-top: 5px;">Cámara de Comercio y Producción de La Libertad</p>
+        </div>
+
+        <!-- Mostrar error si lo hay -->
+        <div th:if="${param.error}" class="mensaje-error" style="margin-bottom: 20px;">
+            <ion-icon name="alert-circle"></ion-icon>
+            <span>Usuario o contraseña incorrectos</span>
+        </div>
+
+        <div th:if="${param.logout}" class="mensaje-exito" style="margin-bottom: 20px;">
+            <ion-icon name="checkmark-circle"></ion-icon>
+            <span>Has cerrado sesión correctamente</span>
+        </div>
+
+        <!-- Formulario de login para Spring Security -->
+        <!-- IMPORTANTE: action debe ser "/loginCCPLL" y method POST -->
+        <form th:action="@{/loginCCPLL}" method="post">
+            <div class="form-group">
+                <label for="username"><ion-icon name="person-outline"></ion-icon> Usuario</label>
+                <input type="text" id="username" name="username" required
+                       placeholder="Ingrese su usuario" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="password"><ion-icon name="lock-closed-outline"></ion-icon> Contraseña</label>
+                <input type="password" id="password" name="password" required
+                       placeholder="Ingrese su contraseña">
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%;">
+                <ion-icon name="log-in-outline"></ion-icon> Iniciar Sesión
+            </button>
+        </form>
+
+        <div style="margin-top: 30px; text-align: center; color: #6c757d; font-size: 14px;">
+            <p style="margin-top: 15px; color: #722f37;">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                Ahora con seguridad Spring Security
+            </p>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

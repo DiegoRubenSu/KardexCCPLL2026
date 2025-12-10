@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIs - Sistema de Inventarios</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+<body>
+<div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+<div class="contenido">
+    <h1><ion-icon name="wifi-outline"></ion-icon> APIs del Sistema</h1>
+
+    <div class="card">
+        <h2><ion-icon name="link-outline"></ion-icon> URLs para Probar</h2>
+
+        <p>Estas URLs devuelven datos en formato JSON:</p>
+
+        <div style="margin: 20px 0;">
+            <h3><ion-icon name="cube-outline"></ion-icon> Artículos</h3>
+            <div class="filtro-stats" style="margin-bottom: 10px;">
+                <ion-icon name="globe-outline"></ion-icon>
+                <a href="/api/v1/articulos" target="_blank" style="color: #722f37; text-decoration: none;">
+                    <strong>http://localhost:8080/api/v1/articulos</strong>
+                </a>
+            </div>
+            <p style="color: #6c757d; font-size: 14px;">Muestra todos los artículos en JSON</p>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3><ion-icon name="stats-chart-outline"></ion-icon> Estadísticas</h3>
+            <div class="filtro-stats" style="margin-bottom: 10px;">
+                <ion-icon name="globe-outline"></ion-icon>
+                <a href="/api/v1/reportes/estadisticas" target="_blank" style="color: #722f37; text-decoration: none;">
+                    <strong>http://localhost:8080/api/v1/reportes/estadisticas</strong>
+                </a>
+            </div>
+            <p style="color: #6c757d; font-size: 14px;">Muestra estadísticas del inventario</p>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h3><ion-icon name="warning-outline"></ion-icon> Stock Bajo</h3>
+            <div class="filtro-stats" style="margin-bottom: 10px;">
+                <ion-icon name="globe-outline"></ion-icon>
+                <a href="/api/v1/reportes/stock-bajo" target="_blank" style="color: #722f37; text-decoration: none;">
+                    <strong>http://localhost:8080/api/v1/reportes/stock-bajo</strong>
+                </a>
+            </div>
+            <p style="color: #6c757d; font-size: 14px;">Muestra artículos con poco stock</p>
+        </div>
+
+        <!-- Prueba Directa -->
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 30px;">
+            <h3><ion-icon name="play-outline"></ion-icon> Probar Aquí Mismo</h3>
+
+            <div style="display: flex; gap: 15px; margin: 20px 0;">
+                <button class="btn-primary" onclick="probarAPI('articulos')">
+                    <ion-icon name="cube-outline"></ion-icon> Ver Artículos
+                </button>
+                <button class="btn-primary" style="background: #17a2b8;" onclick="probarAPI('estadisticas')">
+                    <ion-icon name="stats-chart-outline"></ion-icon> Ver Estadísticas
+                </button>
+                <button class="btn-primary" style="background: #28a745;" onclick="probarAPI('stock-bajo')">
+                    <ion-icon name="warning-outline"></ion-icon> Ver Stock Bajo
+                </button>
+            </div>
+
+            <div id="resultado" style="display: none; margin-top: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <h4 style="margin: 0;"><ion-icon name="document-text-outline"></ion-icon> Resultado:</h4>
+                    <button class="btn-cancelar" style="padding: 5px 10px;" onclick="copiarResultado()">
+                        <ion-icon name="copy-outline"></ion-icon> Copiar
+                    </button>
+                </div>
+                <div style="background: white; border: 1px solid #e9ecef; border-radius: 8px; padding: 15px;">
+                    <pre id="resultadoJson" style="margin: 0; font-size: 12px; max-height: 300px; overflow-y: auto;"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function probarAPI(endpoint) {
+        let url;
+
+        if (endpoint === 'articulos') {
+            url = '/api/v1/articulos';
+        } else if (endpoint === 'estadisticas') {
+            url = '/api/v1/reportes/estadisticas';
+        } else if (endpoint === 'stock-bajo') {
+            url = '/api/v1/reportes/stock-bajo';
+        }
+
+        // Mostrar "cargando"
+        document.getElementById('resultado').style.display = 'block';
+        document.getElementById('resultadoJson').textContent = 'Cargando...';
+        document.getElementById('resultadoJson').style.color = '#6c757d';
+
+        // Hacer la petición
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('resultadoJson').style.color = '#2c3e50';
+                document.getElementById('resultadoJson').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                document.getElementById('resultadoJson').style.color = '#dc3545';
+                document.getElementById('resultadoJson').textContent = '❌ ' + error.message +
+                    '\n\nNota: Asegúrate de que las APIs estén copiadas en el paquete "api/"';
+            });
+    }
+
+    function copiarResultado() {
+        const texto = document.getElementById('resultadoJson').textContent;
+        navigator.clipboard.writeText(texto)
+            .then(() => {
+                alert('✅ Resultado copiado al portapapeles');
+            })
+            .catch(err => {
+                alert('❌ Error al copiar');
+            });
+    }
+
+    // Probar automáticamente al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+        // Intenta cargar las APIs para ver si funcionan
+        fetch('/api/v1/articulos')
+            .then(response => {
+                if (response.ok) {
+                    console.log('✅ APIs funcionando correctamente');
+                }
+            })
+            .catch(error => {
+                console.log('⚠️ Algunas APIs pueden no estar implementadas aún');
+            });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Artículo - Sistema de Inventarios</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+<div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+<div class="contenido">
+    <h1><ion-icon name="create-outline"></ion-icon> Editar Artículo</h1>
+
+    <!-- Mensajes -->
+    <div th:if="${success}" class="mensaje-exito">
+        <ion-icon name="checkmark-circle"></ion-icon>
+        <span th:text="${success}"></span>
+    </div>
+
+    <div th:if="${error}" class="mensaje-error">
+        <ion-icon name="alert-circle"></ion-icon>
+        <span th:text="${error}"></span>
+    </div>
+
+    <div class="card">
+        <h2><ion-icon name="pencil-outline"></ion-icon> Modificar Artículo</h2>
+
+        <form th:action="@{'/articulos/editar/' + ${articulo.id}}" method="post" th:object="${articulo}">
+            <!-- Código (solo lectura) -->
+            <div class="form-group">
+                <label for="codigo"><ion-icon name="barcode-outline"></ion-icon> Código</label>
+                <input type="text" id="codigo" th:field="*{codigo}"
+                       class="form-control" readonly style="background-color: #f8f9fa;">
+            </div>
+
+            <!-- Descripción -->
+            <div class="form-group">
+                <label for="descripcion"><ion-icon name="document-text-outline"></ion-icon> Descripción *</label>
+                <input type="text" id="descripcion" th:field="*{descripcion}"
+                       class="form-control" required maxlength="255">
+            </div>
+
+            <!-- Unidad -->
+            <div class="form-group">
+                <label for="unidad"><ion-icon name="cube-outline"></ion-icon> Unidad *</label>
+                <select id="unidad" th:field="*{unidad}" class="form-control" required>
+                    <option value="">Seleccionar unidad...</option>
+                    <option value="Unidad">Unidad</option>
+                    <option value="Caja">Caja</option>
+                    <option value="Paquete">Paquete</option>
+                    <option value="Litro">Litro</option>
+                    <option value="Kilogramo">Kilogramo</option>
+                    <option value="Metro">Metro</option>
+                    <option value="Juego">Juego</option>
+                    <option value="Docena">Docena</option>
+                </select>
+            </div>
+
+            <!-- Precio -->
+            <div class="form-group">
+                <label for="precio"><ion-icon name="cash-outline"></ion-icon> Precio (S/)</label>
+                <input type="number" id="precio" th:field="*{precio}"
+                       class="form-control" step="0.01" min="0">
+            </div>
+
+            <!-- Inventario Inicial -->
+            <div class="form-group">
+                <label for="inventarioInicial"><ion-icon name="archive-outline"></ion-icon> Inventario Inicial</label>
+                <input type="number" id="inventarioInicial" th:field="*{inventarioInicial}"
+                       class="form-control" min="0"
+                       oninput="calcularInventarioFinal()">
+            </div>
+
+            <!-- Entradas -->
+            <div class="form-group">
+                <label for="entradas"><ion-icon name="arrow-down-circle-outline"></ion-icon> Entradas</label>
+                <input type="number" id="entradas" th:field="*{entradas}"
+                       class="form-control" min="0"
+                       oninput="calcularInventarioFinal()">
+            </div>
+
+            <!-- Salidas -->
+            <div class="form-group">
+                <label for="salidas"><ion-icon name="arrow-up-circle-outline"></ion-icon> Salidas</label>
+                <input type="number" id="salidas" th:field="*{salidas}"
+                       class="form-control" min="0"
+                       oninput="calcularInventarioFinal()">
+            </div>
+
+            <!-- Ajuste -->
+            <div class="form-group">
+                <label for="ajuste"><ion-icon name="options-outline"></ion-icon> Ajuste</label>
+                <input type="number" id="ajuste" th:field="*{ajuste}"
+                       class="form-control" min="0" value="0">
+                <small style="color: #6c757d; display: block; margin-top: 5px;">
+                    Para correcciones o diferencias de inventario
+                </small>
+            </div>
+
+            <!-- Inventario Final (calculado) -->
+            <div class="form-group">
+                <label for="inventarioFinal"><ion-icon name="calculator-outline"></ion-icon> Inventario Final</label>
+                <input type="number" id="inventarioFinal" th:field="*{inventarioFinal}"
+                       class="form-control" readonly style="background-color: #f8f9fa;">
+                <small style="color: #6c757d; display: block; margin-top: 5px;">
+                    Se calcula automáticamente: Inventario Inicial + Entradas - Salidas
+                </small>
+            </div>
+
+            <!-- Botones -->
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">
+                    <ion-icon name="save-outline"></ion-icon> Guardar Cambios
+                </button>
+                <a th:href="@{/articulos/gestionar}" class="btn-cancelar">
+                    <ion-icon name="close-outline"></ion-icon> Cancelar
+                </a>
+                <a th:href="@{'/movimientos/historial/articulo/' + ${articulo.id}}"
+                   class="btn-primary" style="background: #17a2b8;">
+                    <ion-icon name="time-outline"></ion-icon> Ver Historial
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Información del artículo -->
+    <div class="card" style="margin-top: 20px;">
+        <h3><ion-icon name="information-circle-outline"></ion-icon> Información del Artículo</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px;">
+            <div>
+                <p><strong><ion-icon name="calendar-outline"></ion-icon> Fecha de Registro:</strong></p>
+                <p th:text="${articulo.createdAt != null ? #temporals.format(articulo.createdAt, 'dd/MM/yyyy HH:mm') : 'No disponible'}"></p>
+            </div>
+            <div>
+                <p><strong><ion-icon name="cube-outline"></ion-icon> Estado de Stock:</strong></p>
+                <span th:if="${articulo.inventarioFinal == 0}" class="badge-salida">SIN STOCK</span>
+                <span th:if="${articulo.inventarioFinal > 0 && articulo.inventarioFinal <= 10}"
+                      class="badge-salida" style="background: #fff3cd; color: #856404;">STOCK BAJO</span>
+                <span th:if="${articulo.inventarioFinal > 10}" class="badge-entrada">EN STOCK</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function calcularInventarioFinal() {
+        const inicial = parseInt(document.getElementById('inventarioInicial').value) || 0;
+        const entradas = parseInt(document.getElementById('entradas').value) || 0;
+        const salidas = parseInt(document.getElementById('salidas').value) || 0;
+        const final = inicial + entradas - salidas;
+
+        document.getElementById('inventarioFinal').value = final;
+    }
+
+    // Calcular al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+        calcularInventarioFinal();
+
+        // Prevenir envío múltiple del formulario
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(e) {
+            const submitBtn = this.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<ion-icon name="hourglass-outline"></ion-icon> Guardando...';
+            }
+        });
+    });
+</script>
+</body>
+</html>

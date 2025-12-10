@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Movimientos - Sistema de Inventarios</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+<div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+<div class="contenido">
+    <h1><ion-icon name="swap-vertical-outline"></ion-icon> Registrar Movimientos</h1>
+
+    <!-- Mensajes -->
+    <div th:if="${success}" class="mensaje-exito">
+        <ion-icon name="checkmark-circle"></ion-icon>
+        <span th:text="${success}"></span>
+    </div>
+
+    <div th:if="${error}" class="mensaje-error">
+        <ion-icon name="alert-circle"></ion-icon>
+        <span th:text="${error}"></span>
+    </div>
+
+    <div class="card">
+        <h2><ion-icon name="repeat-outline"></ion-icon> Nuevo Movimiento</h2>
+
+        <form th:action="@{/movimientos/registrar}" method="post" th:object="${movimiento}">
+            <!-- Seleccionar artículo -->
+            <div class="form-group">
+                <label for="articuloId"><ion-icon name="cube-outline"></ion-icon> Seleccionar Artículo *</label>
+                <select id="articuloId" th:field="*{articuloId}" class="form-control" required
+                        onchange="actualizarStockDisponible(this)">
+                    <option value="">Seleccionar artículo...</option>
+                    <option th:each="articulo : ${articulos}"
+                            th:value="${articulo.id}"
+                            th:text="${articulo.codigo + ' - ' + articulo.descripcion + ' (Stock: ' + articulo.inventarioFinal + ')'}">
+                    </option>
+                </select>
+                <div id="stockInfo" style="margin-top: 5px; display: none;">
+                    <small style="color: #28a745; font-weight: 500;">
+                        <ion-icon name="checkmark-circle-outline"></ion-icon>
+                        Stock disponible: <span id="stockDisponible">0</span> unidades
+                    </small>
+                </div>
+            </div>
+
+            <!-- Tipo de movimiento -->
+            <div class="form-group">
+                <label for="tipoMovimiento"><ion-icon name="swap-vertical-outline"></ion-icon> Tipo de Movimiento *</label>
+                <select id="tipoMovimiento" th:field="*{tipoMovimiento}" class="form-control" required
+                        onchange="actualizarColorTipo(this)">
+                    <option value="">Seleccionar tipo...</option>
+                    <option value="ENTRADA">Entrada (Ingreso de stock)</option>
+                    <option value="SALIDA">Salida (Egreso de stock)</option>
+                </select>
+            </div>
+
+            <!-- Cantidad -->
+            <div class="form-group">
+                <label for="cantidad"><ion-icon name="calculator-outline"></ion-icon> Cantidad *</label>
+                <input type="number" id="cantidad" th:field="*{cantidad}"
+                       class="form-control" required min="1"
+                       placeholder="Ingrese la cantidad">
+                <small style="color: #6c757d; display: block; margin-top: 5px;">
+                    La cantidad debe ser un número mayor a 0
+                </small>
+            </div>
+
+            <!-- Motivo -->
+            <div class="form-group">
+                <label for="motivo"><ion-icon name="chatbubble-outline"></ion-icon> Motivo</label>
+                <textarea id="motivo" th:field="*{motivo}"
+                          class="form-control" rows="3"
+                          placeholder="Ej: Compra mensual, Uso oficina, Daño, etc."></textarea>
+            </div>
+
+            <!-- Botones -->
+            <div class="form-actions">
+                <button type="submit" class="btn-primary" id="btnRegistrar">
+                    <ion-icon name="checkmark-outline"></ion-icon> Registrar Movimiento
+                </button>
+                <a th:href="@{/movimientos/historial}" class="btn-cancelar">
+                    <ion-icon name="time-outline"></ion-icon> Ver Historial
+                </a>
+                <button type="reset" class="btn-cancelar">
+                    <ion-icon name="refresh-outline"></ion-icon> Limpiar
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Historial reciente -->
+    <div class="card" style="margin-top: 30px;">
+        <h2><ion-icon name="time-outline"></ion-icon> Movimientos Recientes</h2>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <p>Últimos 10 movimientos registrados</p>
+            <a th:href="@{/movimientos/historial}" class="btn-primary" style="padding: 10px 15px;">
+                <ion-icon name="list-outline"></ion-icon> Ver Todo el Historial
+            </a>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Artículo</th>
+                    <th>Tipo</th>
+                    <th>Cantidad</th>
+                    <th>Stock Anterior</th>
+                    <th>Stock Nuevo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="movimiento : ${historialReciente}"
+                    th:class="${movimiento.tipoMovimiento == 'ENTRADA'} ? 'movimiento-entrada' : 'movimiento-salida'">
+                    <td th:text="${movimiento.fechaFormateada}"></td>
+                    <td>
+                        <strong th:text="${movimiento.codigoArticulo}"></strong><br>
+                        <small th:text="${movimiento.descripcionArticulo}"></small>
+                    </td>
+                    <td>
+                                <span th:if="${movimiento.tipoMovimiento == 'ENTRADA'}" class="badge-entrada">
+                                    <ion-icon name="arrow-down-circle"></ion-icon> ENTRADA
+                                </span>
+                        <span th:if="${movimiento.tipoMovimiento == 'SALIDA'}" class="badge-salida">
+                                    <ion-icon name="arrow-up-circle"></ion-icon> SALIDA
+                                </span>
+                    </td>
+                    <td class="table-number" th:text="${movimiento.cantidad}"></td>
+                    <td class="table-number" th:text="${movimiento.stockAnterior}"></td>
+                    <td class="table-number" th:text="${movimiento.stockNuevo}"></td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(historialReciente)}">
+                    <td colspan="6" style="text-align: center; padding: 30px;">
+                        <ion-icon name="alert-circle-outline" style="font-size: 48px; color: #6c757d;"></ion-icon>
+                        <p style="margin-top: 10px;">No hay movimientos registrados</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function actualizarStockDisponible(select) {
+        const selectedOption = select.options[select.selectedIndex];
+        const stockInfo = document.getElementById('stockInfo');
+
+        if (selectedOption.value) {
+            // Extraer el stock del texto de la opción
+            const text = selectedOption.text;
+            const match = text.match(/Stock: (\d+)/);
+
+            if (match) {
+                const stock = parseInt(match[1]);
+                document.getElementById('stockDisponible').textContent = stock;
+                stockInfo.style.display = 'block';
+
+                // Actualizar validación de salidas
+                const tipoMovimiento = document.getElementById('tipoMovimiento').value;
+                const cantidadInput = document.getElementById('cantidad');
+
+                if (tipoMovimiento === 'SALIDA' && cantidadInput.value > stock) {
+                    cantidadInput.setCustomValidity('La cantidad no puede ser mayor al stock disponible');
+                } else {
+                    cantidadInput.setCustomValidity('');
+                }
+            }
+        } else {
+            stockInfo.style.display = 'none';
+        }
+    }
+
+    function actualizarColorTipo(select) {
+        const btnRegistrar = document.getElementById('btnRegistrar');
+
+        if (select.value === 'ENTRADA') {
+            btnRegistrar.style.background = 'linear-gradient(to right, #28a745, #20c997)';
+        } else if (select.value === 'SALIDA') {
+            btnRegistrar.style.background = 'linear-gradient(to right, #dc3545, #e2727d)';
+        } else {
+            btnRegistrar.style.background = 'linear-gradient(to right, #722f37, #8a3c46)';
+        }
+
+        // Validar cantidad contra stock disponible
+        const articuloSelect = document.getElementById('articuloId');
+        const cantidadInput = document.getElementById('cantidad');
+
+        if (select.value === 'SALIDA' && articuloSelect.value) {
+            const stock = parseInt(document.getElementById('stockDisponible').textContent);
+            if (cantidadInput.value && cantidadInput.value > stock) {
+                cantidadInput.setCustomValidity('La cantidad no puede ser mayor al stock disponible');
+            } else {
+                cantidadInput.setCustomValidity('');
+            }
+        }
+    }
+
+    // Validación del formulario
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        const btnRegistrar = document.getElementById('btnRegistrar');
+
+        form.addEventListener('submit', function(e) {
+            const tipoMovimiento = document.getElementById('tipoMovimiento').value;
+            const articuloId = document.getElementById('articuloId').value;
+            const cantidad = document.getElementById('cantidad').value;
+
+            if (!articuloId) {
+                alert('Por favor seleccione un artículo');
+                e.preventDefault();
+                return;
+            }
+
+            if (!tipoMovimiento) {
+                alert('Por favor seleccione el tipo de movimiento');
+                e.preventDefault();
+                return;
+            }
+
+            if (!cantidad || cantidad < 1) {
+                alert('Por favor ingrese una cantidad válida');
+                e.preventDefault();
+                return;
+            }
+
+            if (tipoMovimiento === 'SALIDA') {
+                const stock = parseInt(document.getElementById('stockDisponible').textContent);
+                if (parseInt(cantidad) > stock) {
+                    alert('Stock insuficiente. Stock disponible: ' + stock);
+                    e.preventDefault();
+                    return;
+                }
+
+                if (!confirm('¿Confirmar salida de inventario?')) {
+                    e.preventDefault();
+                    return;
+                }
+            }
+
+            // Deshabilitar botón durante el envío
+            btnRegistrar.disabled = true;
+            btnRegistrar.innerHTML = '<ion-icon name="hourglass-outline"></ion-icon> Registrando...';
+        });
+
+        // Validar cantidad en tiempo real
+        const cantidadInput = document.getElementById('cantidad');
+        cantidadInput.addEventListener('input', function() {
+            const tipoMovimiento = document.getElementById('tipoMovimiento').value;
+
+            if (tipoMovimiento === 'SALIDA') {
+                const stock = parseInt(document.getElementById('stockDisponible').textContent) || 0;
+                if (this.value && parseInt(this.value) > stock) {
+                    this.setCustomValidity('La cantidad no puede ser mayor al stock disponible');
+                } else {
+                    this.setCustomValidity('');
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

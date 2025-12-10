@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Movimientos - Sistema de Inventarios</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+<div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+<div class="contenido">
+    <h1><ion-icon name="time-outline"></ion-icon> Historial de Movimientos</h1>
+
+    <div class="card">
+        <h2><ion-icon name="filter-outline"></ion-icon> Filtros</h2>
+
+        <form method="get" th:action="@{/movimientos/historial}" class="filtro-form">
+            <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+                <div style="flex: 1;">
+                    <input type="text" name="filtro" th:value="${filtro}"
+                           placeholder="Buscar por artículo, tipo o motivo..." class="form-control">
+                </div>
+                <button type="submit" class="btn-primary">
+                    <ion-icon name="search-outline"></ion-icon> Buscar
+                </button>
+                <a th:href="@{/movimientos/historial}" class="btn-cancelar">
+                    <ion-icon name="refresh-outline"></ion-icon> Limpiar
+                </a>
+            </div>
+        </form>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Artículo</th>
+                    <th>Tipo</th>
+                    <th>Cantidad</th>
+                    <th>Motivo</th>
+                    <th>Stock Anterior</th>
+                    <th>Stock Nuevo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="movimiento : ${historial}"
+                    th:class="${movimiento.tipoMovimiento == 'ENTRADA'} ? 'movimiento-entrada' : 'movimiento-salida'">
+                    <td th:text="${movimiento.fechaFormateada}"></td>
+                    <td>
+                        <a th:href="@{'/movimientos/historial/articulo/' + ${movimiento.articuloId}}">
+                            <strong th:text="${movimiento.codigoArticulo}"></strong> -
+                            <span th:text="${movimiento.descripcionArticulo}"></span>
+                        </a>
+                    </td>
+                    <td>
+                                <span th:if="${movimiento.tipoMovimiento == 'ENTRADA'}" class="badge-entrada">
+                                    <ion-icon name="arrow-down-circle"></ion-icon> ENTRADA
+                                </span>
+                        <span th:if="${movimiento.tipoMovimiento == 'SALIDA'}" class="badge-salida">
+                                    <ion-icon name="arrow-up-circle"></ion-icon> SALIDA
+                                </span>
+                    </td>
+                    <td class="table-number" th:text="${movimiento.cantidad}"></td>
+                    <td th:text="${movimiento.motivo}"></td>
+                    <td class="table-number" th:text="${movimiento.stockAnterior}"></td>
+                    <td class="table-number" th:text="${movimiento.stockNuevo}"></td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(historial)}">
+                    <td colspan="7" style="text-align: center; padding: 40px;">
+                        <ion-icon name="alert-circle-outline" style="font-size: 48px; color: #6c757d;"></ion-icon>
+                        <p style="margin-top: 10px;">No se encontraron movimientos</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Paginación -->
+        <div th:if="${totalPaginas > 1}" class="paginacion">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
+                <div>
+                    <span>Mostrando <span th:text="${historial.size()}"></span> de <span th:text="${totalElementos}"></span> movimientos</span>
+                </div>
+
+                <div style="display: flex; gap: 5px;">
+                    <a th:href="@{'/movimientos/historial'(page=0, size=${size}, filtro=${filtro})}"
+                       th:classappend="${paginaActual == 0} ? 'disabled' : ''"
+                       class="btn-paginacion">
+                        <ion-icon name="chevron-back-outline"></ion-icon>
+                    </a>
+
+                    <a th:if="${paginaActual > 0}"
+                       th:href="@{'/movimientos/historial'(page=${paginaActual-1}, size=${size}, filtro=${filtro})}"
+                       class="btn-paginacion">
+                        <ion-icon name="arrow-back-outline"></ion-icon>
+                    </a>
+
+                    <span th:each="i : ${#numbers.sequence(0, totalPaginas-1)}"
+                          th:if="${(i >= paginaActual-2 and i <= paginaActual+2) or i == 0 or i == totalPaginas-1}">
+                            <a th:href="@{'/movimientos/historial'(page=${i}, size=${size}, filtro=${filtro})}"
+                               th:text="${i+1}"
+                               th:classappend="${i == paginaActual} ? 'active' : ''"
+                               class="btn-paginacion">
+                            </a>
+                        </span>
+
+                    <a th:if="${paginaActual < totalPaginas-1}"
+                       th:href="@{'/movimientos/historial'(page=${paginaActual+1}, size=${size}, filtro=${filtro})}"
+                       class="btn-paginacion">
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+
+                    <a th:href="@{'/movimientos/historial'(page=${totalPaginas-1}, size=${size}, filtro=${filtro})}"
+                       th:classappend="${paginaActual == totalPaginas-1} ? 'disabled' : ''"
+                       class="btn-paginacion">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </a>
+                </div>
+
+                <div>
+                    <select onchange="cambiarTamanio(this)" class="select-tamanio">
+                        <option value="10" th:selected="${size == 10}">10 por página</option>
+                        <option value="20" th:selected="${size == 20}">20 por página</option>
+                        <option value="50" th:selected="${size == 50}">50 por página</option>
+                        <option value="100" th:selected="${size == 100}">100 por página</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function cambiarTamanio(select) {
+        const size = select.value;
+        const url = new URL(window.location.href);
+        url.searchParams.set('size', size);
+        url.searchParams.set('page', 0);
+        window.location.href = url.toString();
+    }
+</script>
+</body>
+</html>

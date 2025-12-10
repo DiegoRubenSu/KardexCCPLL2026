@@ -1,0 +1,455 @@
+2025-12-09T21:11:24.660-05:00  INFO 14076 --- [main] com.kardex.kardex.KardexApplication      : Starting KardexApplication using Java 21.0.8 with PID 14076 (C:\Users\Diego\Desktop\Nueva carpeta (2)\kardex\target\classes started by Diego in C:\Users\Diego\Desktop\Nueva carpeta (2)\kardex)
+2025-12-09T21:11:24.661-05:00 DEBUG 14076 --- [main] com.kardex.kardex.KardexApplication      : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-09T21:11:24.662-05:00  INFO 14076 --- [main] com.kardex.kardex.KardexApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-12-09T21:11:25.489-05:00  INFO 14076 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-09T21:11:25.543-05:00  INFO 14076 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-12-09T21:11:26.285-05:00  INFO 14076 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-09T21:11:26.294-05:00  INFO 14076 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09T21:11:26.294-05:00  INFO 14076 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-09T21:11:26.362-05:00  INFO 14076 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-09T21:11:26.363-05:00  INFO 14076 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1658 ms
+2025-12-09T21:11:26.657-05:00  INFO 14076 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-09T21:11:26.701-05:00  INFO 14076 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-09T21:11:26.725-05:00  INFO 14076 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-09T21:11:26.909-05:00  INFO 14076 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-09T21:11:26.928-05:00  INFO 14076 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-09T21:11:27.187-05:00  INFO 14076 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51fb5fe6
+2025-12-09T21:11:27.189-05:00  INFO 14076 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-09T21:11:27.868-05:00  INFO 14076 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-09T21:11:27.914-05:00  INFO 14076 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:11:28.244-05:00  INFO 14076 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-09T21:11:29.142-05:00  WARN 14076 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-09T21:11:29.633-05:00  INFO 14076 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-12-09T21:11:29.691-05:00  INFO 14076 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@36152513, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e3f7bde, org.springframework.security.web.context.SecurityContextHolderFilter@60b65a4a, org.springframework.security.web.header.HeaderWriterFilter@5ad755c5, org.springframework.web.filter.CorsFilter@45ba31bc, org.springframework.security.web.authentication.logout.LogoutFilter@3f12af2f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@b3bb18a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59ca0db6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@248f1090, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@13e4287c, org.springframework.security.web.access.ExceptionTranslationFilter@67b9b79c, org.springframework.security.web.access.intercept.AuthorizationFilter@75f69816]
+2025-12-09T21:11:30.096-05:00  INFO 14076 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-12-09T21:11:30.111-05:00  INFO 14076 --- [main] com.kardex.kardex.KardexApplication      : Started KardexApplication in 5.8 seconds (process running for 6.142)
+2025-12-09T21:12:00.018-05:00  INFO 14076 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : ✅ Sistema verificado: 2025-12-09T21:12:00.018320200
+2025-12-09T21:12:59.727-05:00  INFO 14076 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:12:59.727-05:00  INFO 14076 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-09T21:12:59.727-05:00  INFO 14076 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-09T21:13:02.159-05:00  INFO 17732 --- [main] com.kardex.kardex.KardexApplication      : Starting KardexApplication using Java 21.0.8 with PID 17732 (C:\Users\Diego\Desktop\Nueva carpeta (2)\kardex\target\classes started by Diego in C:\Users\Diego\Desktop\Nueva carpeta (2)\kardex)
+2025-12-09T21:13:02.160-05:00 DEBUG 17732 --- [main] com.kardex.kardex.KardexApplication      : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-09T21:13:02.161-05:00  INFO 17732 --- [main] com.kardex.kardex.KardexApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-12-09T21:13:02.923-05:00  INFO 17732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-09T21:13:02.974-05:00  INFO 17732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2025-12-09T21:13:03.698-05:00  INFO 17732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-09T21:13:03.707-05:00  INFO 17732 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09T21:13:03.708-05:00  INFO 17732 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-09T21:13:03.777-05:00  INFO 17732 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-09T21:13:03.778-05:00  INFO 17732 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1577 ms
+2025-12-09T21:13:04.087-05:00  INFO 17732 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-09T21:13:04.135-05:00  INFO 17732 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-09T21:13:04.166-05:00  INFO 17732 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-09T21:13:04.358-05:00  INFO 17732 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-09T21:13:04.378-05:00  INFO 17732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-09T21:13:04.631-05:00  INFO 17732 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2133b712
+2025-12-09T21:13:04.633-05:00  INFO 17732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-09T21:13:05.345-05:00  INFO 17732 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-09T21:13:05.391-05:00  INFO 17732 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:13:05.720-05:00  INFO 17732 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-09T21:13:06.556-05:00  WARN 17732 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-09T21:13:07.023-05:00  INFO 17732 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-12-09T21:13:07.084-05:00  INFO 17732 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@36db2ef8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4c57b0e7, org.springframework.security.web.context.SecurityContextHolderFilter@1bd051c4, org.springframework.security.web.header.HeaderWriterFilter@6593f4fd, org.springframework.web.filter.CorsFilter@258fe58c, org.springframework.security.web.authentication.logout.LogoutFilter@7a00446, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5b092600, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1ce4f3ac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a57cec1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64f8ef03, org.springframework.security.web.access.ExceptionTranslationFilter@7da1bf14, org.springframework.security.web.access.intercept.AuthorizationFilter@4cfd3ccd]
+2025-12-09T21:13:07.483-05:00  INFO 17732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-12-09T21:13:07.497-05:00  INFO 17732 --- [main] com.kardex.kardex.KardexApplication      : Started KardexApplication in 5.698 seconds (process running for 6.048)
+2025-12-09T21:13:26.694-05:00  INFO 17732 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-09T21:13:26.694-05:00  INFO 17732 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-09T21:13:26.695-05:00  INFO 17732 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-09T21:13:26.713-05:00  WARN 17732 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:13:26.722-05:00  WARN 17732 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:14:00.002-05:00  INFO 17732 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : ✅ Sistema verificado: 2025-12-09T21:14:00.002851100
+2025-12-09T21:15:00.012-05:00  INFO 17732 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : ✅ Sistema verificado: 2025-12-09T21:15:00.012732400
+2025-12-09T21:16:00.010-05:00  INFO 17732 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : ✅ Sistema verificado: 2025-12-09T21:16:00.010084100
+2025-12-09T21:16:36.410-05:00  INFO 17732 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:16:36.412-05:00  INFO 17732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-09T21:16:36.418-05:00  INFO 17732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-09T21:16:38.777-05:00  INFO 20420 --- [main] com.kardex.kardex.KardexApplication      : Starting KardexApplication using Java 21.0.8 with PID 20420 (C:\Users\Diego\Desktop\Nueva carpeta (2)\kardex\target\classes started by Diego in C:\Users\Diego\Desktop\Nueva carpeta (2)\kardex)
+2025-12-09T21:16:38.782-05:00 DEBUG 20420 --- [main] com.kardex.kardex.KardexApplication      : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-09T21:16:38.783-05:00  INFO 20420 --- [main] com.kardex.kardex.KardexApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-12-09T21:16:39.592-05:00  INFO 20420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-09T21:16:39.641-05:00  INFO 20420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 2 JPA repository interfaces.
+2025-12-09T21:16:40.383-05:00  INFO 20420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-09T21:16:40.393-05:00  INFO 20420 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09T21:16:40.393-05:00  INFO 20420 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-09T21:16:40.465-05:00  INFO 20420 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-09T21:16:40.466-05:00  INFO 20420 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1641 ms
+2025-12-09T21:16:40.784-05:00  INFO 20420 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-09T21:16:40.828-05:00  INFO 20420 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-09T21:16:40.857-05:00  INFO 20420 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-09T21:16:41.044-05:00  INFO 20420 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-09T21:16:41.065-05:00  INFO 20420 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-09T21:16:41.333-05:00  INFO 20420 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ca4c88a
+2025-12-09T21:16:41.335-05:00  INFO 20420 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-09T21:16:42.054-05:00  INFO 20420 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-09T21:16:42.102-05:00  INFO 20420 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:16:42.424-05:00  INFO 20420 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-09T21:16:43.229-05:00  WARN 20420 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-09T21:16:43.733-05:00  INFO 20420 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-12-09T21:16:43.787-05:00  INFO 20420 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4601abbe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40d6d07c, org.springframework.security.web.context.SecurityContextHolderFilter@bca34d, org.springframework.security.web.header.HeaderWriterFilter@555bb408, org.springframework.web.filter.CorsFilter@1a8cb4a9, org.springframework.security.web.authentication.logout.LogoutFilter@334412ed, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@15d0d8c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60b65a4a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a9ea4d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@74f782a5, org.springframework.security.web.access.ExceptionTranslationFilter@12a4937c, org.springframework.security.web.access.intercept.AuthorizationFilter@396d5c73]
+2025-12-09T21:16:44.218-05:00  INFO 20420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-12-09T21:16:44.232-05:00  INFO 20420 --- [main] com.kardex.kardex.KardexApplication      : Started KardexApplication in 5.813 seconds (process running for 6.197)
+2025-12-09T21:16:53.249-05:00  INFO 20420 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-09T21:16:53.250-05:00  INFO 20420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-09T21:16:53.251-05:00  INFO 20420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-09T21:16:53.271-05:00  WARN 20420 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:16:53.278-05:00  WARN 20420 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:17:00.011-05:00  INFO 20420 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : ✅ Sistema verificado: 2025-12-09T21:17:00.011510500
+2025-12-09T21:17:57.061-05:00  INFO 20420 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:17:57.063-05:00  INFO 20420 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-09T21:17:57.068-05:00  INFO 20420 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-09T21:17:58.602-05:00  INFO 3404 --- [main] com.kardex.kardex.KardexApplication      : Starting KardexApplication using Java 21.0.8 with PID 3404 (C:\Users\Diego\Desktop\Nueva carpeta (2)\kardex\target\classes started by Diego in C:\Users\Diego\Desktop\Nueva carpeta (2)\kardex)
+2025-12-09T21:17:58.603-05:00 DEBUG 3404 --- [main] com.kardex.kardex.KardexApplication      : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-09T21:17:58.603-05:00  INFO 3404 --- [main] com.kardex.kardex.KardexApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-12-09T21:17:59.352-05:00  INFO 3404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-09T21:17:59.397-05:00  INFO 3404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
+2025-12-09T21:18:00.126-05:00  INFO 3404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-09T21:18:00.133-05:00  INFO 3404 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09T21:18:00.133-05:00  INFO 3404 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-09T21:18:00.198-05:00  INFO 3404 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-09T21:18:00.199-05:00  INFO 3404 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1557 ms
+2025-12-09T21:18:00.509-05:00  INFO 3404 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-09T21:18:00.555-05:00  INFO 3404 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-09T21:18:00.583-05:00  INFO 3404 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-09T21:18:00.777-05:00  INFO 3404 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-09T21:18:00.798-05:00  INFO 3404 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-09T21:18:01.066-05:00  INFO 3404 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24ac6fef
+2025-12-09T21:18:01.067-05:00  INFO 3404 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-09T21:18:01.768-05:00  INFO 3404 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-09T21:18:01.816-05:00  INFO 3404 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:18:02.137-05:00  INFO 3404 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-09T21:18:02.959-05:00  WARN 3404 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-09T21:18:03.446-05:00  INFO 3404 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-12-09T21:18:03.501-05:00  INFO 3404 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7590b28f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6cb0ab1e, org.springframework.security.web.context.SecurityContextHolderFilter@23abf9c9, org.springframework.security.web.header.HeaderWriterFilter@45c34a2, org.springframework.web.filter.CorsFilter@6bb500fa, org.springframework.security.web.authentication.logout.LogoutFilter@12a4937c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@571f925f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a0b3704, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4aa4a3e5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@939f06, org.springframework.security.web.access.ExceptionTranslationFilter@4b3a6383, org.springframework.security.web.access.intercept.AuthorizationFilter@756fd0aa]
+2025-12-09T21:18:03.904-05:00  INFO 3404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-12-09T21:18:03.919-05:00  INFO 3404 --- [main] com.kardex.kardex.KardexApplication      : Started KardexApplication in 5.674 seconds (process running for 6.056)
+2025-12-09T21:18:04.105-05:00  INFO 3404 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-09T21:18:04.105-05:00  INFO 3404 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-09T21:18:04.106-05:00  INFO 3404 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-09T21:18:04.127-05:00  WARN 3404 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:18:04.134-05:00  WARN 3404 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:19:00.007-05:00  INFO 3404 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : ✅ Sistema verificado: 2025-12-09T21:19:00.007853
+2025-12-09T21:20:00.004-05:00  INFO 3404 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : ✅ Sistema verificado: 2025-12-09T21:20:00.004441200
+2025-12-09T21:21:00.010-05:00  INFO 3404 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : ✅ Sistema verificado: 2025-12-09T21:21:00.010662100
+2025-12-09T21:22:00.002-05:00  INFO 3404 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : ✅ Sistema verificado: 2025-12-09T21:22:00.002386100
+2025-12-09T21:22:05.012-05:00  INFO 3404 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:22:05.014-05:00  INFO 3404 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-09T21:22:05.019-05:00  INFO 3404 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-09T21:22:07.268-05:00  INFO 14832 --- [main] com.kardex.kardex.KardexApplication      : Starting KardexApplication using Java 21.0.8 with PID 14832 (C:\Users\Diego\Desktop\Nueva carpeta (2)\kardex\target\classes started by Diego in C:\Users\Diego\Desktop\Nueva carpeta (2)\kardex)
+2025-12-09T21:22:07.273-05:00 DEBUG 14832 --- [main] com.kardex.kardex.KardexApplication      : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-09T21:22:07.275-05:00  INFO 14832 --- [main] com.kardex.kardex.KardexApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-12-09T21:22:08.098-05:00  INFO 14832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-09T21:22:08.147-05:00  INFO 14832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 2 JPA repository interfaces.
+2025-12-09T21:22:08.925-05:00  INFO 14832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-09T21:22:08.933-05:00  INFO 14832 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09T21:22:08.934-05:00  INFO 14832 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-09T21:22:09.007-05:00  INFO 14832 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-09T21:22:09.008-05:00  INFO 14832 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1694 ms
+2025-12-09T21:22:09.315-05:00  INFO 14832 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-09T21:22:09.364-05:00  INFO 14832 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-09T21:22:09.393-05:00  INFO 14832 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-09T21:22:09.595-05:00  INFO 14832 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-09T21:22:09.618-05:00  INFO 14832 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-09T21:22:09.892-05:00  INFO 14832 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@227b9277
+2025-12-09T21:22:09.894-05:00  INFO 14832 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-09T21:22:10.579-05:00  INFO 14832 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-09T21:22:10.627-05:00  INFO 14832 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:22:10.962-05:00  INFO 14832 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-09T21:22:12.048-05:00  WARN 14832 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-09T21:22:12.540-05:00  INFO 14832 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-12-09T21:22:12.599-05:00  INFO 14832 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@59957e31, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@46245500, org.springframework.security.web.context.SecurityContextHolderFilter@7a00446, org.springframework.security.web.header.HeaderWriterFilter@384841e3, org.springframework.web.filter.CorsFilter@71e869c2, org.springframework.security.web.authentication.logout.LogoutFilter@322733e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2f944a3e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@70e75151, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@22ef458d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51512c6c, org.springframework.security.web.access.ExceptionTranslationFilter@5c51515f, org.springframework.security.web.access.intercept.AuthorizationFilter@45ba31bc]
+2025-12-09T21:22:13.023-05:00  INFO 14832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-12-09T21:22:13.040-05:00  INFO 14832 --- [main] com.kardex.kardex.KardexApplication      : Started KardexApplication in 6.129 seconds (process running for 6.468)
+2025-12-09T21:22:13.787-05:00  INFO 14832 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-09T21:22:13.788-05:00  INFO 14832 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-09T21:22:13.789-05:00  INFO 14832 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-12-09T21:22:13.809-05:00  WARN 14832 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/loginCCPLL' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:22:19.517-05:00  WARN 14832 --- [http-nio-8080-exec-5] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/menu' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:23:00.003-05:00  INFO 14832 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:23:00.003526600
+2025-12-09T21:24:00.009-05:00  INFO 14832 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:24:00.009587
+2025-12-09T21:25:00.014-05:00  INFO 14832 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:25:00.014243200
+2025-12-09T21:26:00.014-05:00  INFO 14832 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:26:00.014849500
+2025-12-09T21:27:01.597-05:00  INFO 10352 --- [main] com.kardex.kardex.KardexApplication      : Starting KardexApplication using Java 21.0.8 with PID 10352 (C:\Users\Diego\Downloads\kardex\target\classes started by Diego in C:\Users\Diego\Downloads\kardex)
+2025-12-09T21:27:01.598-05:00 DEBUG 10352 --- [main] com.kardex.kardex.KardexApplication      : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-09T21:27:01.599-05:00  INFO 10352 --- [main] com.kardex.kardex.KardexApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-12-09T21:27:02.439-05:00  INFO 10352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-09T21:27:02.497-05:00  INFO 10352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
+2025-12-09T21:27:03.266-05:00  INFO 10352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-09T21:27:03.274-05:00  INFO 10352 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09T21:27:03.274-05:00  INFO 10352 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-09T21:27:03.328-05:00  INFO 10352 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-09T21:27:03.329-05:00  INFO 10352 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1689 ms
+2025-12-09T21:27:03.645-05:00  INFO 10352 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-09T21:27:03.689-05:00  INFO 10352 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-09T21:27:03.717-05:00  INFO 10352 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-09T21:27:03.899-05:00  INFO 10352 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-09T21:27:03.920-05:00  INFO 10352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-09T21:27:04.175-05:00  INFO 10352 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ef4297d
+2025-12-09T21:27:04.177-05:00  INFO 10352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-09T21:27:04.910-05:00  INFO 10352 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-09T21:27:04.961-05:00  INFO 10352 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:27:05.299-05:00  INFO 10352 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-09T21:27:06.120-05:00  WARN 10352 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-09T21:27:06.647-05:00  INFO 10352 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-12-09T21:27:06.702-05:00  INFO 10352 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6786016, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78b00778, org.springframework.security.web.context.SecurityContextHolderFilter@7882f2e2, org.springframework.security.web.header.HeaderWriterFilter@6d6a20f7, org.springframework.web.filter.CorsFilter@4005dc6b, org.springframework.security.web.authentication.logout.LogoutFilter@31d31620, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2984638a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@508a1ef0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@52afe9f2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30cf6802, org.springframework.security.web.access.ExceptionTranslationFilter@57b03187, org.springframework.security.web.access.intercept.AuthorizationFilter@1ca0f80]
+2025-12-09T21:27:07.108-05:00  INFO 10352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-12-09T21:27:07.123-05:00  INFO 10352 --- [main] com.kardex.kardex.KardexApplication      : Started KardexApplication in 5.945 seconds (process running for 6.382)
+2025-12-09T21:27:13.064-05:00  INFO 10352 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-09T21:27:13.064-05:00  INFO 10352 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-09T21:27:13.065-05:00  INFO 10352 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-09T21:27:13.083-05:00  WARN 10352 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:27:13.090-05:00  WARN 10352 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:28:00.016-05:00  INFO 10352 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:28:00.016012200
+2025-12-09T21:29:00.000-05:00  INFO 10352 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:29:00.000233800
+2025-12-09T21:30:00.013-05:00  INFO 10352 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:30:00.013408500
+2025-12-09T21:31:00.002-05:00  INFO 10352 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:31:00.002415900
+2025-12-09T21:32:00.000-05:00  INFO 10352 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:32:00.000966100
+2025-12-09T21:33:00.001-05:00  INFO 10352 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:33:00.001302900
+2025-12-09T21:34:00.002-05:00  INFO 10352 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:34:00.002811800
+2025-12-09T21:35:00.014-05:00  INFO 10352 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:35:00.014152200
+2025-12-09T21:36:00.004-05:00  INFO 10352 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:36:00.004571100
+2025-12-09T21:37:00.013-05:00  INFO 10352 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:37:00.013910800
+2025-12-09T21:37:09.272-05:00  INFO 10352 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:37:09.274-05:00  INFO 10352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-09T21:37:09.281-05:00  INFO 10352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-09T21:37:10.723-05:00  INFO 14384 --- [main] com.kardex.kardex.KardexApplication      : Starting KardexApplication using Java 21.0.8 with PID 14384 (C:\Users\Diego\Downloads\kardex\target\classes started by Diego in C:\Users\Diego\Downloads\kardex)
+2025-12-09T21:37:10.724-05:00 DEBUG 14384 --- [main] com.kardex.kardex.KardexApplication      : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-09T21:37:10.725-05:00  INFO 14384 --- [main] com.kardex.kardex.KardexApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-12-09T21:37:11.477-05:00  INFO 14384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-09T21:37:11.526-05:00  INFO 14384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 2 JPA repository interfaces.
+2025-12-09T21:37:12.253-05:00  INFO 14384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-09T21:37:12.261-05:00  INFO 14384 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09T21:37:12.261-05:00  INFO 14384 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-09T21:37:12.332-05:00  INFO 14384 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-09T21:37:12.333-05:00  INFO 14384 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1564 ms
+2025-12-09T21:37:12.630-05:00  INFO 14384 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-09T21:37:12.675-05:00  INFO 14384 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-09T21:37:12.705-05:00  INFO 14384 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-09T21:37:12.909-05:00  INFO 14384 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-09T21:37:12.928-05:00  INFO 14384 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-09T21:37:13.175-05:00  INFO 14384 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1791e231
+2025-12-09T21:37:13.177-05:00  INFO 14384 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-09T21:37:13.903-05:00  INFO 14384 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-09T21:37:13.951-05:00  INFO 14384 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:37:14.277-05:00  INFO 14384 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-09T21:37:15.140-05:00  WARN 14384 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-09T21:37:15.656-05:00  INFO 14384 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-12-09T21:37:15.720-05:00  INFO 14384 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@b3bb18a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a1af882, org.springframework.security.web.context.SecurityContextHolderFilter@3cab5869, org.springframework.security.web.header.HeaderWriterFilter@77cfbbba, org.springframework.web.filter.CorsFilter@2063d1c8, org.springframework.security.web.authentication.logout.LogoutFilter@5a178d0e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1332e410, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@bca34d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7e7c780, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c0b230, org.springframework.security.web.access.ExceptionTranslationFilter@4913778f, org.springframework.security.web.access.intercept.AuthorizationFilter@269c3cc3]
+2025-12-09T21:37:16.142-05:00  INFO 14384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-12-09T21:37:16.157-05:00  INFO 14384 --- [main] com.kardex.kardex.KardexApplication      : Started KardexApplication in 5.805 seconds (process running for 6.133)
+2025-12-09T21:37:20.726-05:00  INFO 14384 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:37:20.728-05:00  INFO 14384 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-09T21:37:20.734-05:00  INFO 14384 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-09T21:38:09.324-05:00  INFO 15000 --- [main] com.kardex.kardex.KardexApplication      : Starting KardexApplication using Java 21.0.8 with PID 15000 (C:\Users\Diego\Downloads\kardex\target\classes started by Diego in C:\Users\Diego\Downloads\kardex)
+2025-12-09T21:38:09.325-05:00 DEBUG 15000 --- [main] com.kardex.kardex.KardexApplication      : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-09T21:38:09.326-05:00  INFO 15000 --- [main] com.kardex.kardex.KardexApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-12-09T21:38:10.302-05:00  INFO 15000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-09T21:38:10.369-05:00  INFO 15000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 2 JPA repository interfaces.
+2025-12-09T21:38:11.477-05:00  INFO 15000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-09T21:38:11.487-05:00  INFO 15000 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09T21:38:11.487-05:00  INFO 15000 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-09T21:38:11.549-05:00  INFO 15000 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-09T21:38:11.550-05:00  INFO 15000 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2188 ms
+2025-12-09T21:38:11.932-05:00  INFO 15000 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-09T21:38:11.985-05:00  INFO 15000 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-09T21:38:12.019-05:00  INFO 15000 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-09T21:38:12.265-05:00  INFO 15000 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-09T21:38:12.296-05:00  INFO 15000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-09T21:38:12.647-05:00  INFO 15000 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4cd8db31
+2025-12-09T21:38:12.649-05:00  INFO 15000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-09T21:38:13.946-05:00  INFO 15000 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-09T21:38:14.008-05:00  INFO 15000 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:38:14.462-05:00  INFO 15000 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-09T21:38:15.891-05:00  WARN 15000 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-09T21:38:16.589-05:00  INFO 15000 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-12-09T21:38:16.645-05:00  INFO 15000 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1275d11b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@796ca104, org.springframework.security.web.context.SecurityContextHolderFilter@10b21a2b, org.springframework.security.web.header.HeaderWriterFilter@7c9a5397, org.springframework.web.filter.CorsFilter@3f851ccf, org.springframework.security.web.authentication.logout.LogoutFilter@5df01ff5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5d165dce, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64b71b49, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@be706e2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@61c987d7, org.springframework.security.web.access.ExceptionTranslationFilter@343f01c7, org.springframework.security.web.access.intercept.AuthorizationFilter@167e559c]
+2025-12-09T21:38:17.279-05:00  INFO 15000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-12-09T21:38:17.296-05:00  INFO 15000 --- [main] com.kardex.kardex.KardexApplication      : Started KardexApplication in 8.394 seconds (process running for 8.8)
+2025-12-09T21:39:00.014-05:00  INFO 15000 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:39:00.014954600
+2025-12-09T21:40:00.001-05:00  INFO 15000 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:40:00.001808500
+2025-12-09T21:41:00.009-05:00  INFO 15000 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:41:00.009768400
+2025-12-09T21:42:00.014-05:00  INFO 15000 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:42:00.014738600
+2025-12-09T21:42:15.472-05:00  INFO 15000 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-09T21:42:15.473-05:00  INFO 15000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-09T21:42:15.474-05:00  INFO 15000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-12-09T21:42:15.487-05:00  WARN 15000 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:42:15.494-05:00  WARN 15000 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:43:00.011-05:00  INFO 15000 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:43:00.011684700
+2025-12-09T21:44:00.008-05:00  INFO 15000 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:44:00.008400500
+2025-12-09T21:45:00.000-05:00  INFO 15000 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:45:00.000604900
+2025-12-09T21:46:00.008-05:00  INFO 15000 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:46:00.008899200
+2025-12-09T21:47:00.011-05:00  INFO 15000 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:47:00.011370400
+2025-12-09T21:47:09.002-05:00  INFO 15000 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:47:09.004-05:00  INFO 15000 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-09T21:47:09.012-05:00  INFO 15000 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-09T21:49:36.822-05:00  INFO 1200 --- [main] com.kardex.kardex.KardexApplication      : Starting KardexApplication using Java 21.0.8 with PID 1200 (C:\Users\Diego\Downloads\kardex\target\classes started by Diego in C:\Users\Diego\Downloads\kardex)
+2025-12-09T21:49:36.823-05:00 DEBUG 1200 --- [main] com.kardex.kardex.KardexApplication      : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-09T21:49:36.824-05:00  INFO 1200 --- [main] com.kardex.kardex.KardexApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-12-09T21:49:37.634-05:00  INFO 1200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-09T21:49:37.684-05:00  INFO 1200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 2 JPA repository interfaces.
+2025-12-09T21:49:38.464-05:00  INFO 1200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-09T21:49:38.474-05:00  INFO 1200 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09T21:49:38.474-05:00  INFO 1200 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-09T21:49:38.565-05:00  INFO 1200 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-09T21:49:38.566-05:00  INFO 1200 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1699 ms
+2025-12-09T21:49:38.924-05:00  INFO 1200 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-09T21:49:38.972-05:00  INFO 1200 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-09T21:49:39.002-05:00  INFO 1200 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-09T21:49:39.196-05:00  INFO 1200 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-09T21:49:39.214-05:00  INFO 1200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-09T21:49:39.481-05:00  INFO 1200 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b64bf61
+2025-12-09T21:49:39.483-05:00  INFO 1200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-09T21:49:40.295-05:00  INFO 1200 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-09T21:49:40.346-05:00  INFO 1200 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:49:40.681-05:00  INFO 1200 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-09T21:49:41.511-05:00  WARN 1200 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-09T21:49:42.002-05:00  INFO 1200 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-12-09T21:49:42.052-05:00  INFO 1200 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4624ad36, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@119eb15, org.springframework.security.web.context.SecurityContextHolderFilter@2d87ac2b, org.springframework.security.web.header.HeaderWriterFilter@27ad844d, org.springframework.web.filter.CorsFilter@1332e410, org.springframework.security.web.authentication.logout.LogoutFilter@7514e658, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@259fe541, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1bd051c4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1cdf48b9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@396d5c73, org.springframework.security.web.access.ExceptionTranslationFilter@8911222, org.springframework.security.web.access.intercept.AuthorizationFilter@7191c18b]
+2025-12-09T21:49:42.439-05:00  INFO 1200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-12-09T21:49:42.454-05:00  INFO 1200 --- [main] com.kardex.kardex.KardexApplication      : Started KardexApplication in 6.005 seconds (process running for 6.361)
+2025-12-09T21:49:45.263-05:00  INFO 1200 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:49:45.264-05:00  INFO 1200 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-09T21:49:45.270-05:00  INFO 1200 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-09T21:55:43.150-05:00  INFO 6472 --- [main] com.kardex.kardex.KardexApplication      : Starting KardexApplication using Java 21.0.8 with PID 6472 (C:\Users\Diego\Downloads\kardex\target\classes started by Diego in C:\Users\Diego\Downloads\kardex)
+2025-12-09T21:55:43.152-05:00 DEBUG 6472 --- [main] com.kardex.kardex.KardexApplication      : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-09T21:55:43.153-05:00  INFO 6472 --- [main] com.kardex.kardex.KardexApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-12-09T21:55:43.912-05:00  INFO 6472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-09T21:55:43.962-05:00  INFO 6472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 2 JPA repository interfaces.
+2025-12-09T21:55:44.686-05:00  INFO 6472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-09T21:55:44.694-05:00  INFO 6472 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09T21:55:44.695-05:00  INFO 6472 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-09T21:55:44.762-05:00  INFO 6472 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-09T21:55:44.763-05:00  INFO 6472 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1564 ms
+2025-12-09T21:55:45.106-05:00  INFO 6472 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-09T21:55:45.157-05:00  INFO 6472 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-09T21:55:45.187-05:00  INFO 6472 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-09T21:55:45.367-05:00  INFO 6472 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-09T21:55:45.383-05:00  INFO 6472 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-09T21:55:45.627-05:00  INFO 6472 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d4da729
+2025-12-09T21:55:45.629-05:00  INFO 6472 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-09T21:55:46.295-05:00  INFO 6472 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-09T21:55:46.342-05:00  INFO 6472 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:55:46.675-05:00  INFO 6472 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-09T21:55:47.511-05:00  WARN 6472 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-09T21:55:47.948-05:00  INFO 6472 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-12-09T21:55:48.002-05:00  INFO 6472 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@14cc127b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10da7696, org.springframework.security.web.context.SecurityContextHolderFilter@62418263, org.springframework.security.web.header.HeaderWriterFilter@a22be4c, org.springframework.web.filter.CorsFilter@43072e3a, org.springframework.security.web.authentication.logout.LogoutFilter@5789d61d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4cfd3ccd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1cdf48b9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6115b4a0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15d0d8c, org.springframework.security.web.access.ExceptionTranslationFilter@7fb7be26, org.springframework.security.web.access.intercept.AuthorizationFilter@259fe541]
+2025-12-09T21:55:48.419-05:00  INFO 6472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-12-09T21:55:48.435-05:00  INFO 6472 --- [main] com.kardex.kardex.KardexApplication      : Started KardexApplication in 5.634 seconds (process running for 5.972)
+2025-12-09T21:55:50.335-05:00  INFO 6472 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-09T21:55:50.335-05:00  INFO 6472 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-09T21:55:50.336-05:00  INFO 6472 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-09T21:55:50.355-05:00  WARN 6472 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:55:50.362-05:00  WARN 6472 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:56:00.011-05:00  INFO 6472 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:56:00.011131500
+2025-12-09T21:56:17.333-05:00  INFO 6472 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:56:17.335-05:00  INFO 6472 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-09T21:56:17.340-05:00  INFO 6472 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-09T21:57:35.344-05:00  INFO 12472 --- [main] com.kardex.kardex.KardexApplication      : Starting KardexApplication using Java 21.0.8 with PID 12472 (C:\Users\Diego\Downloads\kardex\target\classes started by Diego in C:\Users\Diego\Downloads\kardex)
+2025-12-09T21:57:35.346-05:00 DEBUG 12472 --- [main] com.kardex.kardex.KardexApplication      : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-09T21:57:35.346-05:00  INFO 12472 --- [main] com.kardex.kardex.KardexApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-12-09T21:57:36.111-05:00  INFO 12472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-09T21:57:36.166-05:00  INFO 12472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2025-12-09T21:57:36.958-05:00  INFO 12472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-09T21:57:36.966-05:00  INFO 12472 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09T21:57:36.966-05:00  INFO 12472 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-09T21:57:37.030-05:00  INFO 12472 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-09T21:57:37.031-05:00  INFO 12472 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1640 ms
+2025-12-09T21:57:37.336-05:00  INFO 12472 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-09T21:57:37.388-05:00  INFO 12472 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-09T21:57:37.417-05:00  INFO 12472 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-09T21:57:37.622-05:00  INFO 12472 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-09T21:57:37.650-05:00  INFO 12472 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-09T21:57:37.984-05:00  INFO 12472 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@227b9277
+2025-12-09T21:57:37.986-05:00  INFO 12472 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-09T21:57:38.690-05:00  INFO 12472 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-09T21:57:38.739-05:00  INFO 12472 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T21:57:39.087-05:00  INFO 12472 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-09T21:57:39.940-05:00  WARN 12472 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-09T21:57:40.398-05:00  INFO 12472 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-12-09T21:57:40.453-05:00  INFO 12472 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@248f1090, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5eb20abb, org.springframework.security.web.context.SecurityContextHolderFilter@715ab10f, org.springframework.security.web.header.HeaderWriterFilter@689c5fdc, org.springframework.web.filter.CorsFilter@7514e658, org.springframework.security.web.authentication.logout.LogoutFilter@4f98ae97, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7e7c780, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2043b3d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1af03386, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2762e667, org.springframework.security.web.access.ExceptionTranslationFilter@7aa91a69, org.springframework.security.web.access.intercept.AuthorizationFilter@bca34d]
+2025-12-09T21:57:40.851-05:00  INFO 12472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-12-09T21:57:40.865-05:00  INFO 12472 --- [main] com.kardex.kardex.KardexApplication      : Started KardexApplication in 5.878 seconds (process running for 6.217)
+2025-12-09T21:57:42.649-05:00  INFO 12472 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-09T21:57:42.649-05:00  INFO 12472 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-09T21:57:42.651-05:00  INFO 12472 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-12-09T21:57:42.668-05:00  WARN 12472 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:57:42.676-05:00  WARN 12472 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-12-09T21:58:00.009-05:00  INFO 12472 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:58:00.009414300
+2025-12-09T21:59:00.001-05:00  INFO 12472 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T21:59:00.001682200
+2025-12-09T22:00:00.008-05:00  INFO 12472 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:00:00.008049900
+2025-12-09T22:01:00.009-05:00  INFO 12472 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:01:00.009523200
+2025-12-09T22:02:00.006-05:00  INFO 12472 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:02:00.006692500
+2025-12-09T22:03:00.009-05:00  INFO 12472 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:03:00.009038600
+2025-12-09T22:04:00.011-05:00  INFO 12472 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:04:00.010851700
+2025-12-09T22:05:00.012-05:00  INFO 12472 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:05:00.012585200
+2025-12-09T22:06:00.009-05:00  INFO 12472 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:06:00.009924800
+2025-12-09T22:07:00.011-05:00  INFO 12472 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:07:00.011193
+2025-12-09T22:07:06.209-05:00  INFO 12472 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T22:07:06.211-05:00  INFO 12472 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-09T22:07:06.216-05:00  INFO 12472 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-09T22:07:38.189-05:00  INFO 19988 --- [main] com.kardex.kardex.KardexApplication      : Starting KardexApplication using Java 21.0.8 with PID 19988 (C:\Users\Diego\Downloads\kardex\target\classes started by Diego in C:\Users\Diego\Downloads\kardex)
+2025-12-09T22:07:38.191-05:00 DEBUG 19988 --- [main] com.kardex.kardex.KardexApplication      : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-09T22:07:38.192-05:00  INFO 19988 --- [main] com.kardex.kardex.KardexApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-12-09T22:07:38.986-05:00  INFO 19988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-09T22:07:39.041-05:00  INFO 19988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces.
+2025-12-09T22:07:39.846-05:00  INFO 19988 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-09T22:07:39.857-05:00  INFO 19988 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09T22:07:39.857-05:00  INFO 19988 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-09T22:07:39.941-05:00  INFO 19988 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-09T22:07:39.942-05:00  INFO 19988 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1704 ms
+2025-12-09T22:07:40.300-05:00  INFO 19988 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-09T22:07:40.361-05:00  INFO 19988 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-09T22:07:40.400-05:00  INFO 19988 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-09T22:07:40.616-05:00  INFO 19988 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-09T22:07:40.637-05:00  INFO 19988 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-09T22:07:40.935-05:00  INFO 19988 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2aa811f9
+2025-12-09T22:07:40.936-05:00  INFO 19988 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-09T22:07:41.635-05:00  INFO 19988 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-09T22:07:41.685-05:00  INFO 19988 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T22:07:42.026-05:00  INFO 19988 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-09T22:07:42.952-05:00  WARN 19988 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-09T22:07:43.499-05:00  INFO 19988 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-12-09T22:07:43.578-05:00  INFO 19988 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@14cc127b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10da7696, org.springframework.security.web.context.SecurityContextHolderFilter@62418263, org.springframework.security.web.header.HeaderWriterFilter@a22be4c, org.springframework.web.filter.CorsFilter@43072e3a, org.springframework.security.web.authentication.logout.LogoutFilter@5789d61d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4cfd3ccd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1cdf48b9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6115b4a0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15d0d8c, org.springframework.security.web.access.ExceptionTranslationFilter@7fb7be26, org.springframework.security.web.access.intercept.AuthorizationFilter@259fe541]
+2025-12-09T22:07:44.017-05:00  INFO 19988 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-12-09T22:07:44.032-05:00  INFO 19988 --- [main] com.kardex.kardex.KardexApplication      : Started KardexApplication in 6.221 seconds (process running for 6.577)
+2025-12-09T22:08:00.014-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:08:00.014668600
+2025-12-09T22:09:00.009-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:09:00.009406500
+2025-12-09T22:10:00.012-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:10:00.012543400
+2025-12-09T22:11:00.008-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:11:00.008609100
+2025-12-09T22:12:00.001-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:12:00.001976800
+2025-12-09T22:13:00.009-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:13:00.009842100
+2025-12-09T22:14:00.004-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:14:00.004002900
+2025-12-09T22:15:00.000-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:15:00.000669400
+2025-12-09T22:16:00.012-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:16:00.012216900
+2025-12-09T22:17:00.014-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:17:00.014178200
+2025-12-09T22:18:00.014-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:18:00.014464600
+2025-12-09T22:19:00.007-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:19:00.007121200
+2025-12-09T22:20:00.014-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:20:00.014629500
+2025-12-09T22:21:00.002-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:21:00.002485600
+2025-12-09T22:22:00.010-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:22:00.010855900
+2025-12-09T22:23:00.000-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:23:00.000259
+2025-12-09T22:24:00.015-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:24:00.015191200
+2025-12-09T22:25:00.007-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:25:00.007398200
+2025-12-09T22:26:00.011-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:26:00.011959500
+2025-12-09T22:27:00.011-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:27:00.011176
+2025-12-09T22:28:00.006-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:28:00.006249
+2025-12-09T22:29:00.014-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:29:00.014803600
+2025-12-09T22:30:00.006-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:30:00.006403300
+2025-12-09T22:31:00.014-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:31:00.014516700
+2025-12-09T22:32:00.001-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:32:00.001067
+2025-12-09T22:33:00.013-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:33:00.013980100
+2025-12-09T22:34:00.012-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:34:00.012275800
+2025-12-09T22:35:00.012-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:35:00.012774800
+2025-12-09T22:36:00.015-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:36:00.015326100
+2025-12-09T22:37:00.004-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:37:00.004584800
+2025-12-09T22:38:00.004-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:38:00.004486900
+2025-12-09T22:39:00.010-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:39:00.010883200
+2025-12-09T22:40:00.004-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:40:00.004332
+2025-12-09T22:41:00.002-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:41:00.002667200
+2025-12-09T22:42:00.007-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:42:00.007665900
+2025-12-09T22:43:00.001-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:43:00.001448100
+2025-12-09T22:44:00.002-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:44:00.002283600
+2025-12-09T22:45:00.007-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:45:00.007060300
+2025-12-09T22:46:00.007-05:00  INFO 19988 --- [scheduling-1] c.k.kardex.service.MaintenanceService    : Sistema verificado: 2025-12-09T22:46:00.007775900
+2025-12-09T22:46:50.524-05:00  INFO 19988 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-09T22:46:50.526-05:00  INFO 19988 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-09T22:46:50.530-05:00  INFO 19988 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
