@@ -1,0 +1,12 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "mvn clean package -DskipTests"
+startCommand = "java -Dserver.port=$PORT -jar target/kardex-1.0.0.jar"
+
+[build.environment]
+JAVA_VERSION = "17"
+MAVEN_VERSION = "3.9.6"
+
+[deploy]
+healthcheckPath = "/actuator/health"
+restartPolicyType = "ON_FAILURE"

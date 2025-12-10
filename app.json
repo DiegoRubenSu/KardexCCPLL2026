@@ -1,0 +1,11 @@
+{
+  "name": "kardex",
+  "description": "Sistema de Gestión de Inventarios",
+  "repository": "https://github.com/tuusuario/kardex",
+  "keywords": ["spring", "java", "inventory"],
+  "buildpacks": [
+    {
+      "url": "heroku/java"
+    }
+  ]
+}
